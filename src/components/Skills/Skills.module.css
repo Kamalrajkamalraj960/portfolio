@@ -1,0 +1,134 @@
+.skillsPage {
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #0a0a0a, #000);
+    color: white;
+    padding: 60px 20px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* TITLE */
+.title {
+    text-align: center;
+    font-size: 40px;
+    color: #ffffff;
+    padding: 20px 0;
+    margin-bottom: 20px;
+}
+
+.title:hover {
+    color: #facc15;
+    text-shadow: 0 0 10px #facc15;
+    transition: 0.3s;
+}
+
+/* FILTER BUTTONS */
+.filters {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.filters button {
+    padding: 8px 15px;
+    border-radius: 20px;
+    border: 1px solid #facc15;
+    background: transparent;
+    color: #facc15;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filters button:hover {
+    background: #facc15;
+    color: black;
+    transform: scale(1.05);
+}
+
+.activeBtn {
+    background: #facc15 !important;
+    color: black !important;
+}
+
+/* GRID */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* CARD */
+.card {
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(250, 204, 21, 0.2);
+    padding: 20px;
+    border-radius: 15px;
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.card:hover {
+    transform: translateY(-10px) rotateX(5deg);
+    box-shadow: 0 0 25px rgba(250, 204, 21, 0.2);
+    border-color: rgba(250, 204, 21, 0.5);
+}
+
+/* TOP */
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.icon {
+    font-size: 30px;
+    color: #facc15;
+    margin-bottom: 5px;
+}
+
+/* BAR */
+.bar {
+    height: 8px;
+    background: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.fill {
+    height: 100%;
+    background: #facc15;
+    transition: width 1s ease;
+}
+
+.bottomInfo {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #aaa;
+}
+
+.icon {
+    font-size: 32px;
+    color: #facc15;
+    margin-bottom: 5px;
+    animation: floatIcon 3s infinite ease-in-out;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-6px); }
+}
+
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .title {
+        font-size: 28px;
+    }
+}

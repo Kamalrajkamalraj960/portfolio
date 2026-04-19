@@ -1,0 +1,247 @@
+.contact {
+  padding: 100px 8%;
+  background: linear-gradient(180deg, #000000, #080808);
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* soft glow */
+.contact::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  background: rgba(255, 187, 0, 0.07);
+  filter: blur(90px);
+}
+
+.heading {
+  text-align: center;
+  margin-bottom: 55px;
+  position: relative;
+  background-color: #00000000;
+  z-index: 2;
+}
+
+.heading h2 {
+  font-size: 44px;
+  color: #ffbb00;
+  background-color: #00000000;
+  margin-bottom: 12px;
+  transition: 0.3s ease;
+}
+
+.heading h2:hover {
+  letter-spacing: 2px;
+}
+
+.heading p {
+  color: #bdbdbd;
+  font-size: 17px;
+  background-color: #00000000;
+}
+
+/* Form Card */
+.form {
+  max-width: 720px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 35px;
+  background: rgba(17, 17, 17, 0.92);
+  border: 1px solid rgba(255, 187, 0, 0.08);
+  border-radius: 22px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+  position: relative;
+  z-index: 2;
+  transition: 0.35s ease;
+}
+
+.form:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 187, 0, 0.3);
+  box-shadow: 0 18px 40px rgba(255, 187, 0, 0.08);
+}
+
+/* Inputs */
+.form input,
+.form textarea {
+  padding: 16px 18px;
+  background: #0e0e0e;
+  border: 1px solid #1f1f1f;
+  color: white;
+  border-radius: 14px;
+  font-size: 16px;
+  transition: all 0.3s ease;
+}
+
+.form input::placeholder,
+.form textarea::placeholder {
+  color: #777;
+}
+
+.form input:hover,
+.form textarea:hover {
+  border-color: #444;
+  transform: translateY(-2px);
+}
+
+.form input:focus,
+.form textarea:focus {
+  outline: none;
+  border-color: #ffbb00;
+  box-shadow: 0 0 14px rgba(255, 187, 0, 0.15);
+  transform: scale(1.01);
+}
+
+/* Button */
+.form button {
+  padding: 16px;
+  border: none;
+  border-radius: 14px;
+  background: #ffbb00;
+  color: black;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.form button:hover {
+  background: white;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 22px rgba(255, 255, 255, 0.12);
+}
+
+.form button:active {
+  transform: scale(0.98);
+}
+
+.form button:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+/* Loader */
+.loader {
+  width: 22px;
+  height: 22px;
+  border: 3px solid black;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  display: inline-block;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  background: #111;
+  color: #ffbb00;
+  padding: 14px 22px;
+  border-radius: 12px;
+  border: 1px solid #ffbb00;
+  box-shadow: 0 12px 26px rgba(255, 187, 0, 0.12);
+  z-index: 999;
+  animation: slideUp 0.35s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Tablet */
+@media (max-width: 992px) {
+  .contact {
+    padding: 80px 6%;
+  }
+
+  .heading h2 {
+    font-size: 38px;
+  }
+
+  .form {
+    padding: 28px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  .contact {
+    padding: 70px 5%;
+  }
+
+  .heading h2 {
+    font-size: 32px;
+  }
+
+  .heading p {
+    font-size: 15px;
+  }
+
+  .form {
+    padding: 22px;
+    gap: 15px;
+    border-radius: 18px;
+  }
+
+  .form input,
+  .form textarea {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .form button {
+    padding: 14px;
+    font-size: 15px;
+  }
+
+  .toast {
+    right: 14px;
+    left: 14px;
+    bottom: 18px;
+    text-align: center;
+  }
+}
+
+/* Small Mobile */
+@media (max-width: 480px) {
+  .heading h2 {
+    font-size: 28px;
+  }
+
+  .form {
+    padding: 18px;
+  }
+
+  .form:hover {
+    transform: none;
+  }
+
+  .form button:hover {
+    transform: none;
+  }
+}
