@@ -7,8 +7,8 @@ const projectData = [
         desc: "Modern responsive portfolio built using Next.js and CSS Modules.",
         tech: "Next.js • React • CSS",
         image: "/projects/portfolio.png",
-        live: "#",
-        github: "#",
+        live: "https://portfolio-sooty-ten-x3j3y1gnqb.vercel.app/",
+        github: "https://github.com/Kamalrajkamalraj960/portfolio",
     },
     {
         title: "Task Manager",
@@ -16,7 +16,7 @@ const projectData = [
         tech: "React • Express • MongoDB",
         image: "/projects/todo.png",
         live: "https://to-do-list-five-blue-89.vercel.app/",
-        github: "#",
+        github: "https://github.com/Kamalrajkamalraj960/To-Do-List",
     },
     {
         title: "CRUD Application",
