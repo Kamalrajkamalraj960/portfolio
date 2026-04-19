@@ -24,7 +24,7 @@ export default function Home() {
             <h1>
               Hi<span>👋</span>, I'm <span>Kamalraj&nbsp;</span>,
               <br />
-              a MERN + Python Next Full Stack Developer.
+              a MERN, Next.js & Python Full Stack Developer
             </h1>
 
             <div className={style.small_about}>
