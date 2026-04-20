@@ -27,6 +27,14 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/MERN_CRUD_APP",
     },
     {
+        title: "Kerala Fitness Planner",
+        desc: "Smart fitness web app that generates personalized 7-day Kerala diet plans with BMI, calorie targets, history tracking, and PDF download.",
+        tech: "MERN Stack • MongoDB • Vercel • Render",
+        image: "/projects/keralafitness.png",
+        live: "https://kerala-fitness-planner.vercel.app/",
+        github: "https://github.com/Kamalrajkamalraj960/kerala-fitness-planner",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",
