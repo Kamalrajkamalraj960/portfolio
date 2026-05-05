@@ -35,6 +35,14 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/kerala-fitness-planner",
     },
     {
+        title: "Next.js Expense Manager",
+        desc: "Full-stack expense tracking web application built with Next.js. Includes user authentication, budget tracking, transaction management, and real-time dashboard analytics with a clean UI.",
+        tech: "Next.js • React • MongoDB • Vercel • Tailwind CSS",
+        image: "/projects/expense-manager.png",
+        live: "https://next-js-final-project-sage.vercel.app/",
+        github: "https://github.com/Kamalrajkamalraj960/Next.js-final-project",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",

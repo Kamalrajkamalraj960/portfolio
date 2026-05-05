@@ -64,7 +64,7 @@ export default function About() {
 
                 {/* STATS RINGS */}
                 <div className={styles.statsGrid}>
-                    <RingStat label="Projects" value={4} percent={70} />
+                    <RingStat label="Projects" value={6} percent={70} />
                     <RingStat label="Technologies" value={7} percent={85} />
                 </div>
 
