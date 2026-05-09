@@ -43,6 +43,14 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/Next.js-final-project",
     },
     {
+        title: "Hospital Management System",
+        desc: "Full-stack hospital management web application built with Django. Features secure patient and doctor authentication, appointment booking, doctor dashboard, patient report uploads, department management, and responsive healthcare UI design.",
+        tech: "Django • Python • SQLite • Bootstrap 5 • Render",
+        image: "/projects/hospital-management.png",
+        live: "https://hospital-management-u7z9.onrender.com/login/",
+        github: "https://github.com/Kamalrajkamalraj960/project_5_hospitalManagement-main",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",
