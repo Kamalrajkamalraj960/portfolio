@@ -51,6 +51,14 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/project_5_hospitalManagement-main",
     },
     {
+        title: "Student Management System",
+        desc: "Full-stack student management web application built with Django. Features complete CRUD operations, student image uploads, search functionality, dark mode, responsive dashboard UI, and secure database management.",
+        tech: "Django • Python • SQLite • Bootstrap 5 • Render",
+        image: "/projects/student-management.png",
+        live: "https://students-management-system-fig6.onrender.com/",
+        github: "https://github.com/Kamalrajkamalraj960/student_management_system",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",
