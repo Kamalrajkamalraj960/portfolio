@@ -33,7 +33,7 @@ export default function OrbitSkills() {
             </div>
 
             <div className={styles.centerImage}>
-                <img src="/intro.png" alt="Kamalraj" />
+                <img src="/kamalraj.png" alt="Kamalraj" />
             </div>
         </div>
     );
