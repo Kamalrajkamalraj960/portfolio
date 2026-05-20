@@ -59,6 +59,14 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/student_management_system",
     },
     {
+        title: "Taskify Task Management System",
+        desc: "Modern full-stack task management web application built with the MERN stack. Features secure JWT authentication, task CRUD operations, status filtering, search functionality, dark mode, responsive dashboard UI, and MongoDB Atlas cloud database integration.",
+        tech: "React • Node.js • Express.js • MongoDB Atlas • Tailwind CSS • Render • Vercel",
+        image: "/projects/taskify.png",
+        live: "https://taskify-machine-testing-from-vossia.vercel.app/",
+        github: "https://github.com/Kamalrajkamalraj960/Machine-testing-from-vossial-seed",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",
