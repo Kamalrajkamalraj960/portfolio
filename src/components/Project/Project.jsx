@@ -67,16 +67,18 @@ const projectData = [
         github: "https://github.com/Kamalrajkamalraj960/Machine-testing-from-vossial-seed",
     },
     {
+        title: "KadaWave Ecommerce Platform",
+        desc: "Modern full-stack ecommerce web application built with the MERN stack. Features secure JWT authentication, admin dashboard, product CRUD operations, Cloudinary image uploads, shopping cart system, order management, responsive premium UI, MongoDB Atlas cloud database integration, and automated admin email notifications for customer orders.",
+        tech: "React • Node.js • Express.js • MongoDB Atlas • Tailwind CSS • Cloudinary • Nodemailer • Render • Vercel",
+        image: "/projects/kadawave.png",
+        live: "https://mern-ecommerce-kadawala.vercel.app/",
+        github: "https://github.com/Kamalrajkamalraj960/Mern-Ecommerce_KadaWala",
+    },
+    {
         title: "Chat Application",
         desc: "Realtime messaging app with authentication and ongoing live updates (currently in development).",
         tech: "React • Node.js • Socket.io",
         image: "/projects/chat.png",
-    },
-    {
-        title: "E-Commerce Store",
-        desc: "Full-featured shopping website with cart, checkout, and admin panel (currently in development).",
-        tech: "MERN Stack • MongoDB",
-        image: "/projects/ecommerce.png",
     },
 ];
 
