@@ -75,21 +75,27 @@ export default function About() {
                     <div className={styles.timeline}>
 
                         <Item
+                            title="Full Stack Developer Intern"
+                            place="Vossai Technology"
+                            desc="Currently working as a Full Stack Developer Intern, contributing to real-world web application development using the MERN stack and modern technologies. Involved in frontend and backend development, API integration, database management, bug fixing, responsive UI implementation, team collaboration, and software deployment practices."
+                        />
+
+                        <Item
                             title="Full Stack Development Internship"
                             place="Gen Corpus Data Hub"
-                            desc="Completed internship in MERN and Python full stack development, working on modern web applications, CRUD systems, backend APIs, responsive interfaces, debugging, teamwork collaboration, and real-world software development practices."
+                            desc="Successfully Completed internship in MERN and Python full stack development, working on modern web applications, CRUD systems, backend APIs, responsive interfaces, debugging, teamwork collaboration, and real-world software development practices."
                         />
 
                         <Item
                             title="MERN Stack & Python Development Diploma"
                             place="Full Stack Training Program / Self Learning"
-                            desc="Completed professional MERN stack training in MongoDB, Express.js, React.js, and Node.js, while also learning Python and Django through practical projects. Built full stack applications with frontend, backend, databases, REST APIs, authentication systems, deployment, and responsive UI development."
+                            desc="Successfully Completed professional MERN stack training in MongoDB, Express.js, React.js, and Node.js, while also learning Python and Django through practical projects. Built full stack applications with frontend, backend, databases, REST APIs, authentication systems, deployment, and responsive UI development."
                         />
 
                         <Item
                             title="+2 Higher Secondary"
                             place="Rahmania HSS For Handicapped"
-                            desc="Completed higher secondary education with focus on computer science and core academic subjects, strengthening analytical thinking, technical knowledge, teamwork, and learning confidence."
+                            desc="Successfully Completed higher secondary education with focus on computer science and core academic subjects, strengthening analytical thinking, technical knowledge, teamwork, and learning confidence."
                         />
 
                         <Item
