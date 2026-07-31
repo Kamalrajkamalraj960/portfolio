@@ -1,9 +1,25 @@
 /* ============================================================
    MY PROJECTS — interactive master-detail showcase
    Theme: dark (#000 → #0b0b0b) + gold accent (#ffbb00 / #facc15)
+   Spacing: single 4px-based scale (--s-*) used for every
+   padding / margin / gap so the rhythm stays consistent.
    ============================================================ */
 .projects {
-    padding: 110px 8%;
+    /* spacing scale (4px base) */
+    --s-1: 4px;
+    --s-2: 8px;
+    --s-3: 12px;
+    --s-4: 16px;
+    --s-5: 20px;
+    --s-6: 24px;
+    --s-7: 28px;
+    --s-8: 32px;
+    --s-10: 40px;
+    --s-12: 48px;
+    --s-14: 56px;
+    --s-section: 112px;
+
+    padding: var(--s-section) 8%;
     background: linear-gradient(180deg, #000000, #0b0b0b);
     color: white;
     position: relative;
@@ -27,7 +43,7 @@
 
 .heading {
     text-align: center;
-    margin-bottom: 55px;
+    margin-bottom: var(--s-14);
     position: relative;
     background-color: transparent;
     z-index: 2;
@@ -36,7 +52,7 @@
 .heading h2 {
     font-size: 46px;
     color: #ffffff;
-    margin-bottom: 12px;
+    margin-bottom: var(--s-3);
     background-color: transparent;
     letter-spacing: 1px;
     transition: all 0.3s ease;
@@ -59,18 +75,18 @@
 .activeWrap {
     position: relative;
     z-index: 2;
-    margin-bottom: 46px;
+    margin-bottom: var(--s-12);
 }
 
 .active {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
-    gap: 42px;
+    gap: var(--s-10);
     align-items: stretch;
     background: rgba(17, 17, 17, 0.9);
     border: 1px solid rgba(255, 187, 0, 0.22);
     border-radius: 28px;
-    padding: 30px;
+    padding: var(--s-8);
     box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5),
         0 0 0 1px rgba(255, 255, 255, 0.02) inset,
         0 0 60px rgba(255, 187, 0, 0.06);
@@ -81,7 +97,7 @@
 .activeMedia {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: var(--s-5);
 }
 
 .activeImageFrame {
@@ -108,9 +124,9 @@
 
 .statusBadge {
     position: absolute;
-    top: 14px;
-    left: 14px;
-    padding: 6px 14px;
+    top: var(--s-3);
+    left: var(--s-3);
+    padding: var(--s-1) var(--s-3);
     border-radius: 999px;
     font-size: 12px;
     font-weight: 700;
@@ -132,7 +148,7 @@
 
 .activeButtons {
     display: flex;
-    gap: 14px;
+    gap: var(--s-4);
     flex-wrap: wrap;
 }
 
@@ -142,8 +158,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    gap: 9px;
-    padding: 13px 22px;
+    gap: var(--s-2);
+    padding: var(--s-4) var(--s-6);
     border-radius: 12px;
     font-weight: 700;
     font-size: 15px;
@@ -188,7 +204,7 @@
 .activeInfo {
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: var(--s-5);
     min-width: 0;
 }
 
@@ -207,7 +223,7 @@
 .block {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: var(--s-3);
 }
 
 .blockLabel {
@@ -222,11 +238,11 @@
     list-style: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 9px;
+    gap: var(--s-2);
 }
 
 .badge {
-    padding: 6px 13px;
+    padding: 6px var(--s-3);
     border-radius: 999px;
     font-size: 12.5px;
     font-weight: 600;
@@ -239,12 +255,12 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 9px 18px;
+    gap: var(--s-2) var(--s-5);
 }
 
 .feature {
     position: relative;
-    padding-left: 20px;
+    padding-left: var(--s-5);
     font-size: 14px;
     line-height: 1.5;
     color: #d0d0d0;
@@ -272,7 +288,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 18px;
+    margin-bottom: var(--s-5);
 }
 
 .selectorLabel {
@@ -289,7 +305,7 @@
     color: #ffbb00;
     background: rgba(255, 187, 0, 0.08);
     border: 1px solid rgba(255, 187, 0, 0.22);
-    padding: 5px 13px;
+    padding: 6px var(--s-3);
     border-radius: 999px;
 }
 
@@ -301,7 +317,7 @@
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 22px;
+    gap: var(--s-6);
 }
 
 .cardItem {
@@ -364,9 +380,9 @@
 
 .cardSelectedTag {
     position: absolute;
-    top: 10px;
-    right: 10px;
-    padding: 4px 11px;
+    top: var(--s-2);
+    right: var(--s-2);
+    padding: var(--s-1) var(--s-3);
     border-radius: 999px;
     font-size: 11px;
     font-weight: 700;
@@ -380,7 +396,7 @@
     display: flex;
     flex-direction: column;
     gap: 6px;
-    padding: 15px 17px 18px;
+    padding: var(--s-4);
 }
 
 .cardTitle {
@@ -401,7 +417,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-top: 26px;
+    margin-top: var(--s-7);
 }
 
 .navBtn {
@@ -461,8 +477,8 @@
 @media (max-width: 980px) {
     .active {
         grid-template-columns: 1fr;
-        gap: 26px;
-        padding: 24px;
+        gap: var(--s-6);
+        padding: var(--s-6);
     }
 
     .activeImageFrame {
@@ -475,12 +491,25 @@
 
     .cardRow {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--s-5);
+    }
+
+    /* Prevent a first-paint flash: the server renders 3 cards (default
+       page size) but tablet shows 2. Hide the surplus in CSS so the count
+       already matches before the client effect narrows perGroup to 2. */
+    .cardItem:nth-child(n + 3) {
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
     .projects {
-        padding: 80px 5%;
+        --s-section: 80px;
+        padding: var(--s-section) 5%;
+    }
+
+    .heading {
+        margin-bottom: var(--s-10);
     }
 
     .heading h2 {
@@ -498,7 +527,7 @@
 
 @media (max-width: 600px) {
     .active {
-        padding: 18px;
+        padding: var(--s-5);
         border-radius: 22px;
     }
 
@@ -514,6 +543,12 @@
 
     .cardRow {
         grid-template-columns: 1fr;
+    }
+
+    /* Same guard for mobile: only the first card is visible on first paint,
+       matching the hydrated single-card group (no 3-card stack flash). */
+    .cardItem:nth-child(n + 2) {
+        display: none;
     }
 
     .activeTitle {
