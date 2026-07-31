@@ -1,3 +1,7 @@
+/* ============================================================
+   MY PROJECTS — interactive master-detail showcase
+   Theme: dark (#000 → #0b0b0b) + gold accent (#ffbb00 / #facc15)
+   ============================================================ */
 .projects {
     padding: 110px 8%;
     background: linear-gradient(180deg, #000000, #0b0b0b);
@@ -18,13 +22,14 @@
     top: -80px;
     right: -80px;
     filter: blur(90px);
+    pointer-events: none;
 }
 
 .heading {
     text-align: center;
-    margin-bottom: 65px;
+    margin-bottom: 55px;
     position: relative;
-    background-color: #00000000;
+    background-color: transparent;
     z-index: 2;
 }
 
@@ -32,7 +37,7 @@
     font-size: 46px;
     color: #ffffff;
     margin-bottom: 12px;
-    background-color: #00000000;
+    background-color: transparent;
     letter-spacing: 1px;
     transition: all 0.3s ease;
 }
@@ -40,7 +45,6 @@
 .heading h2:hover {
     color: #facc15;
     text-shadow: 0 0 10px #facc15;
-    transition: 0.3s;
 }
 
 .heading p {
@@ -51,112 +55,429 @@
     line-height: 1.7;
 }
 
-/* Grid */
-.grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
-    gap: 32px;
+/* ===================== ACTIVE PROJECT ===================== */
+.activeWrap {
     position: relative;
-    background-color: #00000000;
     z-index: 2;
+    margin-bottom: 46px;
 }
 
-/* Card */
-.card {
-    background: rgba(17, 17, 17, 0.92);
-    border: 1px solid rgba(255, 187, 0, 0.12);
-    border-radius: 22px;
+.active {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+    gap: 42px;
+    align-items: stretch;
+    background: rgba(17, 17, 17, 0.9);
+    border: 1px solid rgba(255, 187, 0, 0.22);
+    border-radius: 28px;
+    padding: 30px;
+    box-shadow: 0 26px 60px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.02) inset,
+        0 0 60px rgba(255, 187, 0, 0.06);
+    backdrop-filter: blur(12px);
+}
+
+/* LEFT — media */
+.activeMedia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.activeImageFrame {
+    position: relative;
+    border-radius: 20px;
     overflow: hidden;
-    transition: all 0.4s ease;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
-    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    aspect-ratio: 16 / 10;
+    background: #0d0d0d;
+    flex: 1;
 }
 
-.card:hover {
-    transform: translateY(-12px) scale(1.02);
-    border-color: rgba(255, 187, 0, 0.45);
-    box-shadow: 0 18px 40px rgba(255, 187, 0, 0.14);
-}
-
-/* Image */
-.image {
+.activeImage {
     width: 100%;
-    height: 230px;
+    height: 100%;
     object-fit: cover;
-    transition: transform 0.45s ease;   
-    filter: blur(2px);
+    display: block;
+    transition: transform 0.6s ease;
 }
 
-.card:hover .image {
-    transform: scale(1.06);
+.activeImageFrame:hover .activeImage {
+    transform: scale(1.04);
 }
 
-/* Content */
-.content {
-    padding: 26px;
-}
-
-.content h3 {
-    font-size: 27px;
-    margin-bottom: 14px;
-    color: white;
-}
-
-.content p {
-    font-size: 15px;
-    line-height: 1.7;
-    color: #d8d8d8;
-    margin-bottom: 18px;
-}
-
-.content span {
-    display: inline-block;
-    font-size: 14px;
-    color: #ffbb00;
+.statusBadge {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 12px;
     font-weight: 700;
-    margin-bottom: 22px;
+    letter-spacing: 0.4px;
+    backdrop-filter: blur(6px);
 }
 
-/* Buttons */
-.buttons {
+.statusLive {
+    background: rgba(34, 197, 94, 0.16);
+    color: #4ade80;
+    border: 1px solid rgba(74, 222, 128, 0.45);
+}
+
+.statusDev {
+    background: rgba(255, 187, 0, 0.16);
+    color: #ffcf3f;
+    border: 1px solid rgba(255, 187, 0, 0.45);
+}
+
+.activeButtons {
     display: flex;
     gap: 14px;
     flex-wrap: wrap;
 }
 
-.buttons a {
-    text-decoration: none;
-    padding: 11px 18px;
-    border-radius: 10px;
+.primaryBtn,
+.secondaryBtn,
+.disabledBtn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 9px;
+    padding: 13px 22px;
+    border-radius: 12px;
     font-weight: 700;
-    transition: all 0.3s ease;
-    font-size: 14px;
+    font-size: 15px;
+    text-decoration: none;
+    transition: transform 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
+    flex: 1 1 auto;
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
-.buttons a:first-child {
+.primaryBtn {
     background: #ffbb00;
     color: #000;
+    box-shadow: 0 8px 22px rgba(255, 187, 0, 0.22);
 }
 
-.buttons a:last-child {
-    border: 1px solid #ffbb00;
-    color: #ffbb00;
-}
-
-.buttons a:hover {
+.primaryBtn:hover {
+    background: #ffffff;
     transform: translateY(-3px);
 }
 
-.buttons a:first-child:hover {
-    background: white;
+.secondaryBtn {
+    background: transparent;
+    border-color: #ffbb00;
+    color: #ffbb00;
 }
 
-.buttons a:last-child:hover {
+.secondaryBtn:hover {
     background: #ffbb00;
-    color: black;
+    color: #000;
+    transform: translateY(-3px);
 }
 
-/* Responsive */
+.disabledBtn {
+    background: rgba(255, 255, 255, 0.04);
+    border-color: rgba(255, 255, 255, 0.12);
+    color: #8a8a8a;
+    cursor: not-allowed;
+}
+
+/* RIGHT — info */
+.activeInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    min-width: 0;
+}
+
+.activeTitle {
+    font-size: 32px;
+    line-height: 1.15;
+    color: #ffffff;
+}
+
+.activeDesc {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: #d4d4d4;
+}
+
+.block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.blockLabel {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.4px;
+    color: #ffbb00;
+    font-weight: 700;
+}
+
+.badgeList {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 9px;
+}
+
+.badge {
+    padding: 6px 13px;
+    border-radius: 999px;
+    font-size: 12.5px;
+    font-weight: 600;
+    color: #eaeaea;
+    background: rgba(255, 187, 0, 0.08);
+    border: 1px solid rgba(255, 187, 0, 0.25);
+}
+
+.featureList {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 9px 18px;
+}
+
+.feature {
+    position: relative;
+    padding-left: 20px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #d0d0d0;
+}
+
+.feature::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #ffbb00;
+    box-shadow: 0 0 8px rgba(255, 187, 0, 0.6);
+}
+
+/* ===================== SELECTOR ===================== */
+.selector {
+    position: relative;
+    z-index: 2;
+}
+
+.selectorHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+.selectorLabel {
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #9a9a9a;
+    font-weight: 600;
+}
+
+.groupCounter {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffbb00;
+    background: rgba(255, 187, 0, 0.08);
+    border: 1px solid rgba(255, 187, 0, 0.22);
+    padding: 5px 13px;
+    border-radius: 999px;
+}
+
+.selectorTrackWrap {
+    overflow: hidden;
+}
+
+.cardRow {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.cardItem {
+    list-style: none;
+    display: flex;
+}
+
+/* Selector card — single interactive button (no nested interactives) */
+.card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: left;
+    padding: 0;
+    background: rgba(17, 17, 17, 0.92);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 18px;
+    overflow: hidden;
+    cursor: pointer;
+    color: inherit;
+    font-family: inherit;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(255, 187, 0, 0.4);
+    box-shadow: 0 16px 34px rgba(255, 187, 0, 0.12);
+}
+
+.card:focus-visible {
+    outline: 3px solid #facc15;
+    outline-offset: 3px;
+}
+
+.cardSelected {
+    border-color: #ffbb00;
+    box-shadow: 0 0 0 1px #ffbb00, 0 18px 40px rgba(255, 187, 0, 0.2);
+}
+
+.cardThumbFrame {
+    position: relative;
+    display: block;
+    height: 150px;
+    overflow: hidden;
+    background: #0d0d0d;
+}
+
+.cardThumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .cardThumb {
+    transform: scale(1.08);
+}
+
+.cardSelectedTag {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    padding: 4px 11px;
+    border-radius: 999px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    color: #000;
+    background: #ffbb00;
+    box-shadow: 0 4px 12px rgba(255, 187, 0, 0.35);
+}
+
+.cardBody {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 15px 17px 18px;
+}
+
+.cardTitle {
+    font-size: 16px;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.3;
+}
+
+.cardTech {
+    font-size: 12.5px;
+    color: #ffbb00;
+    font-weight: 600;
+}
+
+/* ===================== NAVIGATION ===================== */
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 26px;
+}
+
+.navBtn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    color: #ffbb00;
+    background: rgba(255, 187, 0, 0.08);
+    border: 1px solid rgba(255, 187, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.25s ease, background 0.25s ease, color 0.25s ease;
+}
+
+.navBtn:hover:not(:disabled) {
+    background: #ffbb00;
+    color: #000;
+    transform: scale(1.08);
+}
+
+.navBtn:focus-visible {
+    outline: 3px solid #facc15;
+    outline-offset: 3px;
+}
+
+.navBtn:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+}
+
+.dots {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.dotActive {
+    width: 26px;
+    border-radius: 999px;
+    background: #ffbb00;
+    box-shadow: 0 0 10px rgba(255, 187, 0, 0.6);
+}
+
+/* ===================== RESPONSIVE ===================== */
+@media (max-width: 980px) {
+    .active {
+        grid-template-columns: 1fr;
+        gap: 26px;
+        padding: 24px;
+    }
+
+    .activeImageFrame {
+        aspect-ratio: 16 / 9;
+    }
+
+    .activeTitle {
+        font-size: 28px;
+    }
+
+    .cardRow {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
 @media (max-width: 768px) {
     .projects {
         padding: 80px 5%;
@@ -170,20 +491,64 @@
         font-size: 16px;
     }
 
-    .grid {
+    .featureList {
         grid-template-columns: 1fr;
-        gap: 24px;
+    }
+}
+
+@media (max-width: 600px) {
+    .active {
+        padding: 18px;
+        border-radius: 22px;
     }
 
-    .image {
-        height: 210px;
+    .activeButtons {
+        flex-direction: column;
     }
 
-    .content {
-        padding: 22px;
+    .primaryBtn,
+    .secondaryBtn,
+    .disabledBtn {
+        width: 100%;
     }
 
-    .content h3 {
-        font-size: 23px;
+    .cardRow {
+        grid-template-columns: 1fr;
+    }
+
+    .activeTitle {
+        font-size: 25px;
+    }
+
+    .navBtn {
+        width: 46px;
+        height: 46px;
+    }
+}
+
+/* ===================== REDUCED MOTION ===================== */
+@media (prefers-reduced-motion: reduce) {
+
+    .activeImage,
+    .cardThumb,
+    .card,
+    .primaryBtn,
+    .secondaryBtn,
+    .navBtn,
+    .dot,
+    .heading h2 {
+        transition: none !important;
+    }
+
+    .card:hover,
+    .primaryBtn:hover,
+    .secondaryBtn:hover,
+    .navBtn:hover:not(:disabled) {
+        transform: none;
+    }
+
+    .card:hover .cardThumb,
+    .activeImageFrame:hover .activeImage {
+        transform: none;
     }
 }
