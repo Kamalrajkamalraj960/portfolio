@@ -30,6 +30,40 @@ const projects = [
         githubUrl: "https://github.com/Kamalrajkamalraj960/portfolio",
     },
     {
+        id: "kerox",
+        title: "Kerox AI",
+        shortDescription: "Real-time multilingual voice AI assistant",
+        description:
+            "Kerox AI is a modern voice-first AI assistant that enables natural real-time conversations in Malayalam and English using the Gemini API. It features emotion-aware voice interactions, animated AI avatars, a premium black-and-gold interface, low-latency audio streaming, and an immersive user experience optimized for both desktop and mobile devices.",
+        image: "/projects/kerox.png",
+        technologies: [
+            "Next.js",
+            "React",
+            "TypeScript",
+            "Tailwind CSS",
+            "Gemini API",
+            "WebRTC",
+            "Three.js",
+            "React Three Fiber",
+            "Framer Motion"
+        ],
+        features: [
+            "Real-time voice conversations",
+            "Malayalam & English language support",
+            "Low-latency AI voice streaming",
+            "Emotion-aware AI responses",
+            "Animated AI avatars",
+            "Premium black & gold UI",
+            "Responsive design for desktop & mobile",
+            "Natural speech interruption (barge-in)",
+            "Smooth animations and transitions",
+            "Secure Gemini API integration"
+        ],
+        status: "Live",
+        liveUrl: "https://kerox-eight.vercel.app/",
+        githubUrl: "https://github.com/Kamalrajkamalraj960/Kerox",
+    },
+    {
         id: "task-manager",
         title: "Task Manager",
         shortDescription: "Productivity task tracker",
@@ -326,11 +360,10 @@ function ActiveProject({ project, prefersReducedMotion }) {
                             />
                             {project.status && (
                                 <span
-                                    className={`${styles.statusBadge} ${
-                                        project.status === "Live"
+                                    className={`${styles.statusBadge} ${project.status === "Live"
                                             ? styles.statusLive
                                             : styles.statusDev
-                                    }`}
+                                        }`}
                                 >
                                     {project.status}
                                 </span>
@@ -518,9 +551,8 @@ function ProjectNavigation({ groupIndex, totalGroups, onNavigate }) {
                 {Array.from({ length: totalGroups }).map((_, i) => (
                     <li
                         key={i}
-                        className={`${styles.dot} ${
-                            i === groupIndex ? styles.dotActive : ""
-                        }`}
+                        className={`${styles.dot} ${i === groupIndex ? styles.dotActive : ""
+                            }`}
                     />
                 ))}
             </ul>
